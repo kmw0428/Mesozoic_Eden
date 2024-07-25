@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mesozoic Eden</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/t-rex.png">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--SweetAlert2-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <header data-header class="page-header">
+        <nav>
+            <button class="hamburger-menu">
+                &#9776; <!-- 햄버거 메뉴 아이콘 (세 개의 수평선) -->
+            </button>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#about">Explore & Discover</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#dinosaur">Dinosaurs</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#employee">Employees</a>
+                </li>
+                <li class="nav__item nav__logo">
+                    <a href="/eden">
+                        <img src="img/logo_1.png" alt="logo">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section hero" id="mainpg">
+            <div class="hero__bg">
+                <img class="hero__img" srcset="
+                img/background_2000.jpg 2000w,
+                img/background_1200.jpg 1200w,
+                img/background_800.jpg 800w
+                " src="img/background_1200.jpg" alt="Forest background" />
+            </div>
+            <div class="hero__content" data-content>
+                <div class="hero__text">
+                    <img class="hero__logo" src="img/logo_1.png" alt="Main logo" style="opacity: 1;">
+                </div>
+            </div>
+        </section>
+
+        <section class="section gentle-giants" id="about">
+            <header class="section__header">
+                <h3 class="section__title">Explore & Discover</h3>
+            </header>
+            <div class="section__content section__content--gentle-giants" data-content>
+                <img class="section__img" src="img/park_map.png" alt='Map'>
+                <h2 class="section__main-title section__main-title--left">
+                    Enjoy <br>your experience
+                </h2>
+                <div class="section__intro gentle-giants__intro">
+                    <p>
+                        Go on safari and explore the world of our giant creatures
+                        – the largest animals to have ever lived.
+                    </p>
+                    <p><a href="#" id="error">Find out more</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DINOSAUR -->
+        <section class="section dinosaur-infos" id="dinosaur">
+            <header class="section__header">
+                <h3 class="section__title">Dinosaurs</h3>
+            </header>
+
+            <div class="section-style section__content section__content--profile-infos" data-content>
+                <h2 class="section__dino-title section__pro-intro">MEET OUR DINOSAURS</h2>
+                <div class="container">
+                    <a href="/dinosaurs/수각류" class="box box-1" data-text="수각류"><img src="img/수각류.jpg"
+                            alt="육각류 이미지"></a>
+                    <a href="/dinosaurs/용각류" class="box box-2" data-text="용각류"><img src="img/용각류.jpg"
+                            alt="식각류 이미지"></a>
+                    <a href="/dinosaurs/각룡류" class="box box-3" data-text="각룡류"><img src="img/각룡류.jpg"
+                            alt="곡룡류 이미지"></a>
+                    <a href="/dinosaurs/조각류" class="box box-4" data-text="조각류"><img src="img/조각류.jpg"
+                            alt="검룡류 이미지"></a>
+                    <a href="/dinosaurs/검룡류" class="box box-5" data-text="검룡류"><img src="img/검룡류.jpg"
+                            alt="후각류 이미지"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPARTMENT -->
+        <section class="section employee-infos" id="employee">
+            <header class="section__header">
+                <h3 class="section__title">Employees</h3>
+          </header>
+
+            <div class="section-style section__content section__content--profile-infos" data-content>
+                <h2 class="section__dino-title section__pro-intro">MEET OUR TEAM</h2>
+                <div class="container">
+                    <a href="/employee/가이드팀" class="box box-1" data-text="가이드팀"><img src="img/가이드.jpg"
+                            alt=""></a>
+                    <a href="/employee/보안팀" class="box box-2" data-text="보안팀"><img src="img/보안요원.jpg"
+                            alt=""></a>
+                    <a href="/employee/사육사팀" class="box box-3" data-text="사육사팀"><img src="img/사육사.jpg"
+                            alt=""></a>
+                    <a href="/employee/수의사팀" class="box box-4" data-text="수의사팀"><img src="img/수의사.jpg"
+                            alt=""></a>
+                    <a href="/employee/영업팀" class="box box-5" data-text="영업팀"><img src="img/영업사원.jpg"
+                            alt=""></a>
+                </div>
+            </div>
+            <footer>
+                <div class="footer">
+                    <div class="content">
+                        <img src="img/logo_2_1.png" style="width: 50px; height: auto;" alt="">
+                        <div class="text">
+                            <p><span class="team2"> Address: Daejeon | CEO : Kim, Heo, Ju, Seon | Tel. 1234-5678 | Email : mesozoiceden@dino.com 
+                                | Business registration number : 012-34-56789 |</span> ©Team2 2024 Mesozoic Eden. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </main>
+
+<!-- Javascript -->
+<script src="js/demo.js"></script>
+</body>
+</html>

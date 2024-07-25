@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${type}">Dinosaur Type</title>
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/t-rex.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+
+<body class="profile">
+    <header data-header class="page-header">
+        <nav>
+            <button class="hamburger-menu">
+                &#9776; <!-- 햄버거 메뉴 아이콘 (세 개의 수평선) -->
+            </button>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a th:href="@{/eden#about}">Explore & Discover</a>
+                </li>
+                <li class="nav__item">
+                    <a th:href="@{/eden#dinosaur}">Dinosaurs</a>
+                </li>
+                <li class="nav__item">
+                    <a th:href="@{/eden#employee}">Employees</a>
+                </li>
+                <li class="nav__item nav__logo" style="opacity: 1; transform: translateX(0);">
+                    <a th:href="@{/eden}"><img th:src="@{/img/logo_1.png}" alt=""></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div th:switch="${type}" class="type">
+        <p th:case="'용각류'">Sauropod | 용각류</p>
+        <p th:case="'수각류'">Theropod | 수각류</p>
+        <p th:case="'각룡류'">Ceratopsia | 각룡류</p>
+        <p th:case="'조각류'">Ornithopoda | 조각류</p>
+        <p th:case="'검룡류'">Stegosauria | 검룡류</p>
+        <p th:case="*">없습니다</p>
+    </div>
+    <div class="dino">
+        <div th:each="dino : ${dinosaurs}" class="dinos">
+            <article class="dino-gallery">
+                <img class="type-img" th:src="@{/img/{id}.png(id=${dino.id})}">
+            </article>
+            <div class="cards-container" style="display: none;">
+                <div class="card">
+                    <div class="card-image">
+                        <div class="dino-contain">
+                            <div class="dino-header">
+                                <span th:text="${dino.dinoSpecies}"></span>
+                            </div>
+                            <div class="dino-main">
+                                <p class="subject">Danger Level</p>
+                                <p class="answer" th:classappend="${dino.dinoDangerLevel > 6} ? 'high-alarm'">
+                                    <span th:text="${dino.dinoDangerLevel}"></span>
+                                </p>
+                                <p class="subject">Era</p>
+                                <p class="answer"><span th:text="${dino.dinoEra}"></span></p>
+                                <p class="subject">Size</p>
+                                <p class="answer"><span th:text="${dino.dinoSize}"></span></p>
+                                <p class="subject">Weight</p>
+                                <p class="answer"><span th:text="${dino.dinoWeight}"></span></p>
+                                <p class="subject">Health Info</p>
+                                <p class="answer" th:classappend="${dino.dinoHealthStatus < 6} ? 'high-alarm'">
+                                    <span th:text="${dino.dinoHealthStatus}"></span>
+                                </p>
+                                <p class="subject">Feature</p>
+                                <p class="answer"><span class="Feature" th:text="${dino.dinoFeature}"></span>
+                                </p>
+                            </div>
+                            <div>
+                                <img class="dino-image" th:src="@{/img/{id}.png(id=${dino.id})}" alt="dino-img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script th:src="@{/js/dinoProfile.js}"></script>
+    <script th:src="@{/js/demo.js}"></script>
+</body>
+
+</html>
